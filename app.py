@@ -1,6 +1,6 @@
 from flask import Flask
 from models import db
-from routes import configure_routes
+from routes import app_routes
 
 def create_app():
     app = Flask(__name__)
@@ -9,9 +9,10 @@ def create_app():
     db.init_app(app)
     
     with app.app_context():
-        db.create_all()  # Create tables if they don't exist
+        # Create tables if they don't exist
+        db.create_all()  
     
-    configure_routes(app)
+    app_routes(app)
     
     return app
 

@@ -3,7 +3,7 @@ from models import db, Book
 
 app = create_app()
 
-def seed_database():
+def book_database():
     with app.app_context():
         # Clear existing data
         Book.query.delete()
@@ -26,4 +26,4 @@ def seed_database():
         db.session.commit()
 
 if __name__ == '__main__':
-    seed_database()
+    book_database()

@@ -3,7 +3,7 @@ from models import db, Book
 from schemas import book_schema, books_schema, prompt_schema
 import random
 
-def configure_routes(app):
+def app_routes(app):
     # Fetch all the books
     @app.route('/books', methods=['GET'])
     def get_books():
